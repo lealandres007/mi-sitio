@@ -1,0 +1,420 @@
+/* Variables y reset */
+:root {
+  --hybrid: #2ecc71;
+  --electric: #3498db;
+  --dark: #1e293b;
+  --light: #f9fafb;
+  --muted: #64748b;
+  --radius: 12px;
+  --shadow: 0 4px 20px rgba(0,0,0,0.08);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background: var(--light);
+  color: var(--dark);
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Header */
+header {
+  background: linear-gradient(90deg, var(--hybrid), var(--electric));
+  color: white;
+  padding: 40px 0;
+  text-align: center;
+  margin-bottom: 30px;
+  border-radius: 0 0 var(--radius) var(--radius);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Navigation */
+nav {
+  background: var(--dark);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  margin-bottom: 30px;
+}
+
+nav .container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 15px;
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+nav a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Sections */
+section {
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+section h2 {
+  color: var(--electric);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--hybrid);
+}
+
+section h3 {
+  color: var(--dark);
+  margin: 25px 0 15px;
+}
+
+section p {
+  margin-bottom: 15px;
+}
+
+/* Lists */
+ul, ol {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+/* Images */
+.img-center {
+  text-align: center;
+  margin: 25px 0;
+}
+
+.img-center img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* Icon list */
+.icon-list {
+  display: flex;
+  align-items: flex-start;
+  margin: 25px 0;
+  gap: 20px;
+}
+
+.icon-list img {
+  width: 70px;
+  flex-shrink: 0;
+}
+
+.icon-list h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.gallery-item {
+  background: var(--light);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.gallery-item-content {
+  padding: 20px;
+}
+
+.gallery-item h3 {
+  color: var(--electric);
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.gallery-item p {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+thead {
+  background: linear-gradient(90deg, var(--hybrid), var(--electric));
+  color: white;
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+
+tbody tr:nth-child(even) {
+  background: var(--light);
+}
+
+tbody tr:hover {
+  background: rgba(52, 152, 219, 0.1);
+}
+
+.tool-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  color: var(--electric);
+}
+
+/* Links */
+a {
+  color: var(--electric);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--hybrid);
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  background: var(--dark);
+  color: white;
+  text-align: center;
+  padding: 30px 0;
+  margin-top: 50px;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+footer a {
+  color: var(--electric);
+}
+
+footer p {
+  margin-bottom: 10px;
+}
+
+/* Media Query para tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+  header h1 {
+    font-size: 2.2rem;
+  }
+  
+  nav .container {
+    gap: 10px;
+  }
+  
+  nav a {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+  
+  section {
+    padding: 25px;
+  }
+  
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+}
+
+/* Media Query para móviles (max-width: 768px) */
+@media (max-width: 768px) {
+  header {
+    padding: 30px 0;
+  }
+  
+  header h1 {
+    font-size: 1.8rem;
+  }
+  
+  header p {
+    font-size: 1rem;
+  }
+  
+  nav .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  nav a {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  section {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  section h2 {
+    font-size: 1.4rem;
+  }
+  
+  section h3 {
+    font-size: 1.2rem;
+  }
+  
+  .icon-list {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .icon-list img {
+    margin: 0 auto;
+  }
+  
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .gallery-item img {
+    height: 180px;
+  }
+  
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  
+  tr {
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    border-radius: var(--radius);
+    padding: 10px;
+  }
+  
+  td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  
+  td:before {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    font-weight: bold;
+  }
+  
+  td:nth-of-type(1):before { content: "Herramienta"; }
+  td:nth-of-type(2):before { content: "Tipo"; }
+  td:nth-of-type(3):before { content: "Aplicación Técnica"; }
+  
+  footer {
+    padding: 25px 0;
+  }
+}
+
+/* Media Query para móviles pequeños (max-width: 480px) */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.6rem;
+  }
+  
+  section {
+    padding: 18px;
+  }
+  
+  section h2 {
+    font-size: 1.3rem;
+  }
+  
+  .gallery-item img {
+    height: 160px;
+  }
+  
+  .gallery-item-content {
+    padding: 15px;
+  }
+  
+  .gallery-item h3 {
+    font-size: 1.2rem;
+  }
+  
+  td {
+    padding-left: 45%;
+    font-size: 0.9rem;
+  }
+  
+  footer p {
+    font-size: 0.9rem;
+  }
+}
